@@ -1,0 +1,77 @@
+:root {
+  --bg: #0B0E11;
+  --bg-raised: #12161B;
+  --bg-inset: #080A0C;
+  --line: #1E252C;
+  --line-soft: #171C22;
+  --text: #E8EAED;
+  --text-dim: #8B95A1;
+  --text-faint: #565F6B;
+
+  --signal: #3DDC84;
+  --signal-dim: #1F5C3D;
+  --pending: #F5A623;
+  --pending-dim: #6B4A16;
+  --route: #5B8DEF;
+  --route-dim: #2A3F6B;
+  --danger: #E5484D;
+
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --radius: 3px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  height: 100vh;
+}
+
+::selection {
+  background: var(--signal-dim);
+  color: var(--text);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--route);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
